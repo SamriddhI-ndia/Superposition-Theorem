@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Superposition Principle</title>
+</head>
+<body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="header">
+          <center>
+          <h2>Aim: To verify the Superposition Theorem.
+          </h2>
+        </center>
+        </div>
+      </div>
+        <div class="row">
+            <div class="col-md-3 left">
+              <!-- <h2>Intructions</h2> -->
+              <!-- <button type="toggle"></button> -->
+                <div class="intructions">
+
+                </div>
+                <label for="customRange3" class="form-label">Resistance 1</label>
+                <input type="text" class="input-text r1text zero" value="" onchange="upr1(this.value,this.className)">
+                <input type="range" class="form-range zero" min="1" max="300" step="5" id="r1" onchange="updateR1(this.value);">
+                
+                <br>
+                <label for="customRange3" class="form-label">Resistance 2</label>
+                <input type="text" class="input-text r2text zero" value="" onchange="upr2(this.value,this.className)">
+                <input type="range" class="form-range" min="1" max="300" step="1" id="r2"
+                onchange="updateR2(this.value);">
+                
+                <br>
+                <label for="customRange3" class="form-label">Resistance 3</label>
+                <input type="text" class="input-text r3text zero" value="" onchange="upr3(this.value,this.className)">
+                <input type="range" class="form-range" min="1" max="300" step="1" id="r3"
+                onchange="updateR3(this.value);">
+                
+                <br>
+                <label for="customRange3" class="form-label">Voltage 1</label>
+                <input type="text" class="input-text v1text zero" value="" onchange="upv1(this.value,this.className)">
+                <input type="range" class="form-range" min="1" max="300" step="1" id="v1"
+                onchange="updateV1(this.value);">
+                
+                <br>
+                <label for="customRange3" class="form-label">Voltage 2</label>
+                <input type="text v2text" class="input-text v2text zero" value="" onchange="upv2(this.value,this.className)">
+                <input type="range" class="form-range" min="1" max="300" step="1" id="v2"
+                onchange="updateV2(this.value);">
+                <br>
+               <!-- <button onclick="batao()">Update</button> -->
+
+            </div>
+            <div class="col-md-8 right" >
+              <div id="iminput">
+                <input type="number" class="input-text r1text one" value="" onchange="upr1(this.value,this.id)">
+                <input type="number" class="input-text r2text one" value="" onchange="upr2(this.value,this.id)">
+                <input type="number" class="input-text r3text one" value="" onchange="upr3(this.value,this.id)">
+                <input type="number" class="input-text v1text one" value="" onchange="upv1(this.value,this.id)">
+                <input type="number" class="input-text v2text one" value="" onchange="upv2(this.value,this.id)">
+               
+                </div>
+
+             <center>
+               <!-- <span><h5 style="display: inline-block;">Stimulate for</h5></span> -->
+              <div class="button-change-source" style="display: inline-block;">
+                
+              <button onclick="changepicture(this.id),v1v2()" id="pv1v2">Stimulate for V1 & V2</button>
+              <button onclick="changepicture(this.id),v1()" id="pv1">Stimulate for V1</button>
+              <button onclick="changepicture(this.id),v2()" id="pv2">Stimulate for V2</button>
+              </div>
+              <div>
+
+                <img src="img/v1v2.png" style="width:800px;height:350px" class="main-ciruit-image">
+              </center>
+                
+                <div class="i-column">
+                  <table style="width:80%" id="current-table">
+                    <tbody style="width:80%">
+                    <tr>
+                      <th style="width:325px">Ammeter 1 reading</th>
+                      <th style="width:325px">Ammeter 2 reading</th>
+                      <th style="width:325px">Ammeter 3 reading</th>
+                    </tr>
+                    <tr>
+                      <th><span id="i1"><center>I1</center></span></th>
+                      <th><span id="i2"><center>I2</center></span></th>
+                      <th><span id="i3"><center>I3</center></span></th>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <br>
+                  <center><button onclick="addToTable()">Add to table</button></center>
+                </div>
+                </div> 
+            </div>
+        </div>
+        <div class="row">
+          <div class="col" style="height:100px">
+            <h2>Observation Table</h2>
+          </div>
+          
+        </div>
+        <div class="row">
+         
+          <div class="col">       
+              
+            <br>
+            <table style="width:80%">
+              <tbody style="width:90%">
+              <tr>
+                <th rowspan="2">Serial no. of observation</th>
+                <center><th colspan="3">In presence of both V1 and V2</th></center>
+                <center><th colspan="3">In presence of V1 only</th></center>
+                <center><th colspan="3">In presence of V2 only</th></center>
+              </tr>
+              <tr>
+                <th style="width:125px">Branch current I1 (in amp)</th>
+                <th style="width:125px">Branch current I2 (in amp)</th>
+                <th style="width:125px">Branch current I3 (in amp)</th>
+                <th style="width:125px">Branch current I1 (in amp)</th>
+                <th style="width:125px">Branch current I2 (in amp)</th>
+                <th style="width:125px">Branch current I3 (in amp)</th>
+                <th style="width:125px">Branch current I1 (in amp)</th>
+                <th style="width:125px">Branch current I2 (in amp)</th>
+                <th style="width:125px">Branch current I3 (in amp)</th>
+              </tr>
+              <tr>
+                <td>Ist</td>
+                <td id="i1v1v21"></td>
+                <td id="i2v1v21"></td>
+                <td id="i3v1v21"></td>
+                <td id="i1v11"></td>
+                <td id="i2v11"></td>
+                <td id="i3v11"></td>
+                <td id="i1v21"></td>
+                <td id="i2v21"></td>
+                <td id="i3v21"></td>
+              </tr>
+              <tr>
+                <td>2nd</td>
+                <td id="i1v1v22"></td>
+                <td id="i2v1v22"></td>
+                <td id="i3v1v22"></td>
+                <td id="i1v12"></td>
+                <td id="i2v12"></td>
+                <td id="i3v12"></td>
+                <td id="i1v22"></td>
+                <td id="i2v22"></td>
+                <td id="i3v22"></td>
+              </tr>
+              <tr>
+                <td>3rd</td>
+                <td id="i1v1v23"></td>
+                <td id="i2v1v23"></td>
+                <td id="i3v1v23"></td>
+                <td id="i1v13"></td>
+                <td id="i2v13"></td>
+                <td id="i3v13"></td>
+                <td id="i1v23"></td>
+                <td id="i2v23"></td>
+                <td id="i3v23"></td>
+              </tr>
+              <tr>
+                <td>4th</td>
+                <td id="i1v1v24"></td>
+                <td id="i2v1v24"></td>
+                <td id="i3v1v24"></td>
+                <td id="i1v14"></td>
+                <td id="i2v14"></td>
+                <td id="i3v14"></td>
+                <td id="i1v24"></td>
+                <td id="i2v24"></td>
+                <td id="i3v24"></td>
+              </tr>
+              <tr>
+                <td>5th</td>
+                <td id="i1v1v25"></td>
+                <td id="i2v1v25"></td>
+                <td id="i3v1v25"></td>
+                <td id="i1v15"></td>
+                <td id="i2v15"></td>
+                <td id="i3v15"></td>
+                <td id="i1v25"></td>
+                <td id="i2v25"></td>
+                <td id="i3v25"></td>
+              </tr>
+            </tbody>
+            </table>
+          
+          </div>
+        </div>
+    </div>
+    <script src="all.min.js"></script> <!-- assuming you've saved the file in the root -->;
+    <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/nerdamer.core.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Algebra.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Calculus.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Solve.js"></script>
+<script src="nerdamer.core.js"></script> <!-- assuming you've saved the file in the root of course -->
+<!-- LOAD MODULES -->
+<script src="Algebra.js"></script>
+<script src="Calculus.js"></script>
+<script src="Solve.js"></script>
+<script src="Extra.js"></script>
+    <script src="index.js">
+      
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
