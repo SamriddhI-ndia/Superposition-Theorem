@@ -1,3 +1,3 @@
-# Superposition-Theorem
+#Link for Superposition-Theorem:
 
-[Link] (https://samriddhi-ndia.github.io/Superposition-Theorem/index.html)
+[Click here!](https://samriddhi-ndia.github.io/Superposition-Theorem/index.html)
