@@ -20,11 +20,23 @@
       </div>
         <div class="row">
             <div class="col-md-3 left">
-              <!-- <h2>Intructions</h2> -->
-              <!-- <button type="toggle"></button> -->
-                <div class="intructions">
-
+                <div class="instructions">
+                  <h3>INSTRUCTIONS :</h3><br>
+                 
+                    <p>1. Firstly set the appripriate values for resistances R1, R2, R3 and voltages V1 and V2.</p>
+                    <p>
+                      2. Then click on Stimulate for both V1 and V2, Stimulate for V1, Stimulate for V2 for stimulation.
+                    </p>
+                    <p>
+                      Then click on Add to table to add the results to the observation table.
+                    </p>
+                    <br><br><br><br>
+                    <p>Note:<br>-Values of Resisteance are to be taken in ohms.<br>
+                                -Values of Resisteance are to be taken in Volt.
+                        </p>
+                  </li>
                 </div>
+                <div style="display: none;">
                 <label for="customRange3" class="form-label">Resistance 1</label>
                 <input type="text" class="input-text r1text zero" value="" onchange="upr1(this.value,this.className)">
                 <input type="range" class="form-range zero" min="1" max="300" step="5" id="r1" onchange="updateR1(this.value);">
@@ -54,7 +66,7 @@
                 onchange="updateV2(this.value);">
                 <br>
                <!-- <button onclick="batao()">Update</button> -->
-
+                  </div>
             </div>
             <div class="col-md-8 right" >
               <div id="iminput">
@@ -67,12 +79,10 @@
                 </div>
 
              <center>
-               <!-- <span><h5 style="display: inline-block;">Stimulate for</h5></span> -->
               <div class="button-change-source" style="display: inline-block;">
-                
-              <button onclick="changepicture(this.id),v1v2()" id="pv1v2">Stimulate for V1 & V2</button>
-              <button onclick="changepicture(this.id),v1()" id="pv1">Stimulate for V1</button>
-              <button onclick="changepicture(this.id),v2()" id="pv2">Stimulate for V2</button>
+              <button onclick="changepicture(this.id)" id="pv1v2">Stimulate for V1 & V2</button>
+              <button onclick="changepicture(this.id)" id="pv1">Stimulate for V1</button>
+              <button onclick="changepicture(this.id)" id="pv2">Stimulate for V2</button>
               </div>
               <div>
 
@@ -95,21 +105,20 @@
                     </tbody>
                   </table>
                   <br>
-                  <center><button onclick="addToTable()">Add to table</button></center>
+                  <center><button onclick="addToTable()" style="transform:translateY(-30px)">Add to table</button></center>
                 </div>
                 </div> 
             </div>
         </div>
         <div class="row">
           <div class="col" style="height:100px">
-            <h2>Observation Table</h2>
+            <h2 class="observation">Observation Table</h2>
+            <button onclick="location.reload()" style="width:100px;position: absolute;right:120px;margin-top:40px">Clear</button>
           </div>
           
         </div>
-        <div class="row">
-         
-          <div class="col">       
-              
+        <div class="row">      
+          <div class="col">           
             <br>
             <table style="width:80%">
               <tbody style="width:90%">
