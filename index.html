@@ -65,7 +65,7 @@
                 <input type="range" class="form-range" min="1" max="300" step="1" id="v2"
                 onchange="updateV2(this.value);">
                 <br>
-               <!-- <button onclick="batao()">Update</button> -->
+               
                   </div>
             </div>
             <div class="col-md-8 right" >
@@ -80,32 +80,33 @@
 
              <center>
               <div class="button-change-source" style="display: inline-block;">
-              <button onclick="changepicture(this.id)" id="pv1v2">Stimulate for V1 & V2</button>
-              <button onclick="changepicture(this.id)" id="pv1">Stimulate for V1</button>
-              <button onclick="changepicture(this.id)" id="pv2">Stimulate for V2</button>
+              <button onclick="changepicture(this.id)" id="pv1v2" class="btn btn-success">Stimulate for V1 & V2</button>
+              <button onclick="changepicture(this.id)" id="pv1" class="btn btn-success">Stimulate for V1</button>
+              <button onclick="changepicture(this.id)" id="pv2" class="btn btn-success">Stimulate for V2</button>
               </div>
               <div>
-
+                <div style="background-color: white;">
                 <img src="img/v1v2.png" style="width:45vmax;height:45vmin" class="main-ciruit-image">
+                </div>
               </center>
                 
-                <div class="i-column">
+                <div class="i-column" style="background-color:rgba(17, 138, 238, 0.438);padding:8px;margin:30px;border-radius: 5px;">
                   <table style="width:80%" id="current-table">
                     <tbody style="width:80%">
                     <tr>
-                      <th style="width:325px">Ammeter 1 reading</th>
-                      <th style="width:325px">Ammeter 2 reading</th>
-                      <th style="width:325px">Ammeter 3 reading</th>
+                      <th style="width:325px;">Ammeter 1 reading</th>
+                      <th style="width:325px;">Ammeter 2 reading</th>
+                      <th style="width:325px;">Ammeter 3 reading</th>
                     </tr>
                     <tr>
-                      <th><span id="i1"><center>I1</center></span></th>
-                      <th><span id="i2"><center>I2</center></span></th>
-                      <th><span id="i3"><center>I3</center></span></th>
+                      <td><span id="i1" ><center>I1</center></span></td>
+                      <td><span id="i2" ><center>I2</center></span></td>
+                      <td><span id="i3" ><center>I3</center></span></td>
                     </tr>
                     </tbody>
                   </table>
                   <br>
-                  <center><button onclick="addToTable()" style="transform:translateY(-30px)">Add to table</button></center>
+                  <center><button onclick="addToTable()" style="transform:translateY(-30px)" class="btn btn-success">Add to table</button></center>
                 </div>
                 </div> 
             </div>
@@ -113,7 +114,7 @@
         <div class="row">
           <div class="col" style="height:50px">
             <h2 class="observation" style="display: inline-block;text-align: center;">Observation Table</h2>
-            <button onclick="location.reload()" class="clear">Clear</button>
+            <button onclick="location.reload()" class="clear btn btn-success">Clear</button>
           </div>
           
         </div>
@@ -121,7 +122,7 @@
           <div class="col-md-1">
             
           </div>    
-          <div class="col-md-10">           
+          <div class="col-md-10 ob">           
             <br>
             <table style="width:80vmax">
               <tbody style="width:90vmax">

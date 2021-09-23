@@ -11,11 +11,11 @@ body{
     box-shadow: 0.1px 0.1px 10px 0.1px rgba(0, 0, 0, 0.26);
 }
 .header,.observation{
-    background: rgba(35, 35, 156, 0.76);
+    background: #2E7DAA;
     color:white;
     margin:10px 35px 20px 15px;
     margin-left:7vmin;
-    width:90%;
+    width:92%;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -26,7 +26,7 @@ body{
     padding:15px;
 }
 .left{
-    background: rgba(35, 35, 156, 0.76);
+    background: #2E7DAA;
     color:white;
     font-weight: bold;
     margin: 1vmin 0.5vmin 8vmin 6vmin;
@@ -52,7 +52,7 @@ label{
     height: 10vh;
 }
 td{
-    width:100px;
+    width:99px;
     height:40px;
     border:1px solid black;
     padding:10px;
@@ -70,8 +70,8 @@ img{
 button{
     width:180px;
     height:40px;
-    border-radius:15px;
-    background: rgba(35, 35, 156, 0.76);
+    border-radius:10px;
+    background:  #4CAF50!important;
     color:white;
     font-weight: bold;
     font-size:2vh;
@@ -83,6 +83,7 @@ button{
   }
   .right{
       position:relative;
+      border: 10px solid #2E7DAA;
 }
   .one{
       position: absolute;
@@ -149,7 +150,7 @@ table{
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(29, 29, 29);
     border-spacing: 2px;
-    text-shadow: 0.5px 0.5px 0px #fff;
+    
    border:0px solid white;
    box-shadow: 1px 1px 5px 1px grey;
    margin:7vmin;
@@ -157,35 +158,37 @@ table{
 }
 table th{
     padding: 10px 10px 10px 10px;
-    border-top: 1px solid #fafafa;
-    border-bottom: 1px solid #9d96ffa6;
-    border-left: 1px solid #9d96ffa6;
-    border-right: 1px solid #9d96ffa6;
+    color:white;
+    border: 1px solid #fafafa;
+    /* border-bottom: 1px solid #2E7DAA;
+    border-left: 1px solid #2E7DAA;
+    border-right: 1px solid #2E7DAA; */
     text-align: center;
-    background: #9d96ffa6;
+    background: #2E7DAA;
     font-size:1.8vmin;
 }
 
 table tr td {
     padding: 12px;
-    border: 1px solid #9d96ff8a;
+    border: 1px solid #2e7daa69;
     width:100px;
 }
-tr:nth-child(even){
-    background: #9d96ff8a;
+ tr:nth-child(even){
+    background: #2e7daa69;
 }
 #current-table{
     margin: 50px 6vmax;
 }
-tr> :nth-child(4){
-    border-right: 1px solid black;
+tr> :nth-child(4),tr> :nth-child(7){
+    border-right: 1px solid #757575;
 }
-tr> :nth-child(7){
-    border-right: 1px solid black;
-}
+
 .instructions{
     padding:20px;
     font-weight:100;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 0.5px 0.5px 0px #9d96ff8a;
+}
+#i1,#i2,#i3{
+    background-color: #F0D3AE;
 }
